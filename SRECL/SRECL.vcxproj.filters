@@ -255,6 +255,18 @@
     <ClInclude Include="DirectX\Include\audiodefs.h">
       <Filter>DirectX\Inc</Filter>
     </ClInclude>
+    <ClInclude Include="DirectCommon.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectThreadSafe.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -278,5 +290,18 @@
     <None Include="DirectX\Include\D3DX_DXGIFormatConvert.inl">
       <Filter>DirectX\Inc</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectGraphics.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectThreadSafe.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SRECL.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
