@@ -267,6 +267,36 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DirectGraphics2D.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics3D.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectFont.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSound.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectShow.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSafe.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSprite.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSurface.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectTexture.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -296,6 +326,36 @@
       <Filter>SRCL</Filter>
     </ClCompile>
     <ClCompile Include="DirectThreadSafe.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics2D.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics3D.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectFont.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectInput.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSound.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectShow.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSafe.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSprite.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSurface.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectTexture.cpp">
       <Filter>SRCL</Filter>
     </ClCompile>
   </ItemGroup>

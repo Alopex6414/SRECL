@@ -137,7 +137,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DirectCommon.h" />
+    <ClInclude Include="DirectFont.h" />
     <ClInclude Include="DirectGraphics.h" />
+    <ClInclude Include="DirectGraphics2D.h" />
+    <ClInclude Include="DirectGraphics3D.h" />
+    <ClInclude Include="DirectInput.h" />
+    <ClInclude Include="DirectSafe.h" />
+    <ClInclude Include="DirectShow.h" />
+    <ClInclude Include="DirectSound.h" />
+    <ClInclude Include="DirectSprite.h" />
+    <ClInclude Include="DirectSurface.h" />
+    <ClInclude Include="DirectTexture.h" />
     <ClInclude Include="DirectThreadSafe.h" />
     <ClInclude Include="DirectX\Include\audiodefs.h" />
     <ClInclude Include="DirectX\Include\comdecl.h" />
@@ -225,7 +235,17 @@
     <None Include="DirectX\Include\xnamathvector.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DirectFont.cpp" />
     <ClCompile Include="DirectGraphics.cpp" />
+    <ClCompile Include="DirectGraphics2D.cpp" />
+    <ClCompile Include="DirectGraphics3D.cpp" />
+    <ClCompile Include="DirectInput.cpp" />
+    <ClCompile Include="DirectSafe.cpp" />
+    <ClCompile Include="DirectShow.cpp" />
+    <ClCompile Include="DirectSound.cpp" />
+    <ClCompile Include="DirectSprite.cpp" />
+    <ClCompile Include="DirectSurface.cpp" />
+    <ClCompile Include="DirectTexture.cpp" />
     <ClCompile Include="DirectThreadSafe.cpp" />
   </ItemGroup>
   <ItemGroup>
