@@ -223,6 +223,17 @@
     <ClInclude Include="DirectX\Include\XInput.h" />
     <ClInclude Include="DirectX\Include\xma2defs.h" />
     <ClInclude Include="DirectX\Include\xnamath.h" />
+    <ClInclude Include="PlumCipherA.h" />
+    <ClInclude Include="PlumConsole.h" />
+    <ClInclude Include="PlumCrypt.h" />
+    <ClInclude Include="PlumFile.h" />
+    <ClInclude Include="PlumGraphics.h" />
+    <ClInclude Include="PlumIni.h" />
+    <ClInclude Include="PlumLog.h" />
+    <ClInclude Include="PlumPack.h" />
+    <ClInclude Include="PlumPath.h" />
+    <ClInclude Include="PlumProcess.h" />
+    <ClInclude Include="PlumThread.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +258,17 @@
     <ClCompile Include="DirectSurface.cpp" />
     <ClCompile Include="DirectTexture.cpp" />
     <ClCompile Include="DirectThreadSafe.cpp" />
+    <ClCompile Include="PlumCipherA.cpp" />
+    <ClCompile Include="PlumConsole.cpp" />
+    <ClCompile Include="PlumCrypt.cpp" />
+    <ClCompile Include="PlumFile.cpp" />
+    <ClCompile Include="PlumGraphics.cpp" />
+    <ClCompile Include="PlumIni.cpp" />
+    <ClCompile Include="PlumLog.cpp" />
+    <ClCompile Include="PlumPack.cpp" />
+    <ClCompile Include="PlumPath.cpp" />
+    <ClCompile Include="PlumProcess.cpp" />
+    <ClCompile Include="PlumThread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SRECL.rc" />

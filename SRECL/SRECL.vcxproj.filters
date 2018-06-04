@@ -297,6 +297,39 @@
     <ClInclude Include="DirectTexture.h">
       <Filter>SRCL</Filter>
     </ClInclude>
+    <ClInclude Include="PlumConsole.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumCipherA.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumCrypt.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPack.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumFile.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumGraphics.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumIni.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumLog.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPath.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumProcess.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumThread.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -357,6 +390,39 @@
     </ClCompile>
     <ClCompile Include="DirectTexture.cpp">
       <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumConsole.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumCipherA.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumCrypt.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumPack.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumFile.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumGraphics.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumIni.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumLog.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumPath.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumProcess.cpp">
+      <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumThread.cpp">
+      <Filter>SFIL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
