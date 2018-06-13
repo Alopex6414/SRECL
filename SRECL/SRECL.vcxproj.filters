@@ -330,6 +330,9 @@
     <ClInclude Include="PlumThread.h">
       <Filter>SFIL</Filter>
     </ClInclude>
+    <ClInclude Include="Cerasusfps.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -423,6 +426,9 @@
     </ClCompile>
     <ClCompile Include="PlumThread.cpp">
       <Filter>SFIL</Filter>
+    </ClCompile>
+    <ClCompile Include="Cerasusfps.cpp">
+      <Filter>SRCL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
