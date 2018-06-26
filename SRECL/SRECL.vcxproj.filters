@@ -333,6 +333,9 @@
     <ClInclude Include="Cerasusfps.h">
       <Filter>SRCL</Filter>
     </ClInclude>
+    <ClInclude Include="DirectMesh.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -428,6 +431,9 @@
       <Filter>SFIL</Filter>
     </ClCompile>
     <ClCompile Include="Cerasusfps.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectMesh.cpp">
       <Filter>SRCL</Filter>
     </ClCompile>
   </ItemGroup>
