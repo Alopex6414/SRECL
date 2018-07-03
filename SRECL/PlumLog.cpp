@@ -6,10 +6,11 @@
 * @file		PlumLog.cpp
 * @brief	This Program is PlumLog DLL Project.
 * @author	Alopex/Helium
-* @version	v1.01a
+* @version	v1.03a
 * @date		2018-1-26	v1.00a	alopex	Create Project.
 * @date		2018-3-20	v1.01a	alopex	Modify Code Bug.
 * @date		2018-3-24	v1.02a	alopex	Add Auto Create File Path.
+* @date		2018-7-03	v1.03a	alopex	Add Call Mode.
 */
 #include "PlumLog.h"
 
@@ -63,7 +64,7 @@ CPlumLog::CPlumLog(bool IsUseLog)
 // @Para: None
 // @Return: bool (true: 启用, false: 不启用)
 //------------------------------------------------------------------
-bool CPlumLog::PlumLogGetUse() const
+bool PLUMLOG_CALLMODE CPlumLog::PlumLogGetUse() const
 {
 	return m_bIsUseLog;
 }
@@ -75,7 +76,7 @@ bool CPlumLog::PlumLogGetUse() const
 // @Para: bool IsUseLog (true: 启用, false: 不启用)
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogSetUse(bool IsUseLog)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogSetUse(bool IsUseLog)
 {
 	m_bIsUseLog = IsUseLog;
 }
@@ -87,7 +88,7 @@ void CPlumLog::PlumLogSetUse(bool IsUseLog)
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogInit()
+void PLUMLOG_CALLMODE CPlumLog::PlumLogInit()
 {
 	char ModulePathArr[MAX_PATH];
 	char* pModuleNameArr = NULL;
@@ -196,7 +197,7 @@ void CPlumLog::PlumLogInit()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogExit()
+void PLUMLOG_CALLMODE CPlumLog::PlumLogExit()
 {
 	//程式结束
 	PlumLogWriteLine("");
@@ -212,7 +213,7 @@ void CPlumLog::PlumLogExit()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogClose()
+void PLUMLOG_CALLMODE CPlumLog::PlumLogClose()
 {
 	fclose(m_fp);
 }
@@ -224,7 +225,7 @@ void CPlumLog::PlumLogClose()
 // @Para: LPCSTR lpcstr		//数组地址
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWrite(LPCSTR lpcstr)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWrite(LPCSTR lpcstr)
 {
 	char WriteArr[MAX_PATH];
 
@@ -247,7 +248,7 @@ void CPlumLog::PlumLogWrite(LPCSTR lpcstr)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteElongate(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteElongate(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char WriteArr[MAX_PATH];
@@ -273,7 +274,7 @@ void CPlumLog::PlumLogWriteElongate(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteNormal(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteNormal(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char CMDArr[MAX_PATH];
@@ -310,7 +311,7 @@ void CPlumLog::PlumLogWriteNormal(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteExtend(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteExtend(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char* pArr = NULL;
@@ -363,7 +364,7 @@ void CPlumLog::PlumLogWriteExtend(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char* pArr = NULL;
@@ -409,7 +410,7 @@ void CPlumLog::PlumLogWriteExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...)
 // @Para: LPCSTR lpcstr		//数组地址
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteLine(LPCSTR lpcstr)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteLine(LPCSTR lpcstr)
 {
 	char WriteArr[MAX_PATH];
 
@@ -433,7 +434,7 @@ void CPlumLog::PlumLogWriteLine(LPCSTR lpcstr)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteLineElongate(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteLineElongate(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char WriteArr[MAX_PATH];
@@ -460,7 +461,7 @@ void CPlumLog::PlumLogWriteLineElongate(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteLineNormal(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteLineNormal(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char CMDArr[MAX_PATH];
@@ -498,7 +499,7 @@ void CPlumLog::PlumLogWriteLineNormal(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteLineExtend(LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteLineExtend(LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char* pArr = NULL;
@@ -551,7 +552,7 @@ void CPlumLog::PlumLogWriteLineExtend(LPCSTR lpcstr, ...)
 // @Para: ...
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::PlumLogWriteLineExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...)
+void PLUMLOG_CALLMODE CPlumLog::PlumLogWriteLineExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...)
 {
 	va_list arg_ptr;
 	char* pArr = NULL;
@@ -598,7 +599,7 @@ void CPlumLog::PlumLogWriteLineExtend(LPCSTR file, LONG line, LPCSTR lpcstr, ...
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::WriteLineComputerName()
+void PLUMLOG_CALLMODE CPlumLog::WriteLineComputerName()
 {
 	char WriteArr[MAX_PATH];
 	char* pComputerNameArr = NULL;
@@ -624,7 +625,7 @@ void CPlumLog::WriteLineComputerName()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::WriteLineUserName()
+void PLUMLOG_CALLMODE CPlumLog::WriteLineUserName()
 {
 	char WriteArr[MAX_PATH];
 	char* pUserNameArr = NULL;
@@ -650,7 +651,7 @@ void CPlumLog::WriteLineUserName()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::WriteLineWindowsVision()
+void PLUMLOG_CALLMODE CPlumLog::WriteLineWindowsVision()
 {
 	char WriteArr[MAX_PATH];
 	char* pWindowsVision = NULL;
@@ -792,7 +793,7 @@ void CPlumLog::WriteLineWindowsVision()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::WriteLineProcessID()
+void PLUMLOG_CALLMODE CPlumLog::WriteLineProcessID()
 {
 	char WriteArr[MAX_PATH];
 	DWORD dwProcessID = 0;
@@ -809,7 +810,7 @@ void CPlumLog::WriteLineProcessID()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CPlumLog::WriteLineCurrentTime()
+void PLUMLOG_CALLMODE CPlumLog::WriteLineCurrentTime()
 {
 	char WriteArr[MAX_PATH];
 	SYSTEMTIME LocalTime;
