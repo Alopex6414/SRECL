@@ -226,6 +226,7 @@
     <ClInclude Include="DirectX\Include\xma2defs.h" />
     <ClInclude Include="DirectX\Include\xnamath.h" />
     <ClInclude Include="PlumCipherA.h" />
+    <ClInclude Include="PlumCommon.h" />
     <ClInclude Include="PlumConsole.h" />
     <ClInclude Include="PlumCrypt.h" />
     <ClInclude Include="PlumFile.h" />

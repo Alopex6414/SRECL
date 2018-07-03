@@ -336,6 +336,9 @@
     <ClInclude Include="DirectMesh.h">
       <Filter>SRCL</Filter>
     </ClInclude>
+    <ClInclude Include="PlumCommon.h">
+      <Filter>SFIL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
