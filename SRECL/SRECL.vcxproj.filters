@@ -339,6 +339,9 @@
     <ClInclude Include="PlumCommon.h">
       <Filter>SFIL</Filter>
     </ClInclude>
+    <ClInclude Include="CerasusUnit.h">
+      <Filter>SRCL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -437,6 +440,9 @@
       <Filter>SRCL</Filter>
     </ClCompile>
     <ClCompile Include="DirectMesh.cpp">
+      <Filter>SRCL</Filter>
+    </ClCompile>
+    <ClCompile Include="CerasusUnit.cpp">
       <Filter>SRCL</Filter>
     </ClCompile>
   </ItemGroup>
