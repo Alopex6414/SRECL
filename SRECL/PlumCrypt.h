@@ -6,9 +6,10 @@
 * @file		PlumCrypt.h
 * @brief	This Program is PlumCrypt DLL Project.
 * @author	Alopex/Helium
-* @version	v1.01a
+* @version	v1.02a
 * @date		2017-12-13	v1.00a	alopex	Create Project.
 * @date		2017-12-17	v1.01a	alopex	Add Function EnCrypt/DeCrypt In Memory.
+* @date		2018-07-05	v1.02a	alopex	Add Function Crypt Cat Function.
 */
 #pragma once
 
@@ -70,7 +71,9 @@ public:
 	virtual void PlumDeCryptFileNoExA(const char* pSrc, const char* pDest);
 	//Memory(ÄÚ´æ)
 	virtual void PlumEnCryptFileExtractFromMemoryExA(const char* pDest, DWORD* pLuckyArr);
+	virtual void PlumEnCryptFileExtractFromMemoryExA(const char* pDest, const void* pArray, int nSize, DWORD* pLuckyArr);
 	virtual void PlumDeCryptFileStoreInMemoryExA(const char* pSrc);
+	virtual void PlumDeCryptFileStoreInMemoryExA(const char* pSrc, const void* pArray, int nSize);
 	virtual void PlumDeCryptFileInMemoryStoreInFileExA(const void* pArray, PlumFileInfo sSrcArrayInfo, const char* pDest);
 	virtual void PlumDeCryptFileInMemoryStoreInMemoryExA(const void* pArray, PlumFileInfo sSrcArrayInfo);
 };

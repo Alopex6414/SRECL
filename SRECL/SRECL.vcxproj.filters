@@ -354,6 +354,9 @@
     <ClInclude Include="DirectThreadSafe.h">
       <Filter>SRCL\Inc</Filter>
     </ClInclude>
+    <ClInclude Include="PlumCat.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -456,6 +459,9 @@
     </ClCompile>
     <ClCompile Include="DirectThreadSafe.cpp">
       <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumCat.cpp">
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

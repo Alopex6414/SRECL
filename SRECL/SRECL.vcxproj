@@ -226,6 +226,7 @@
     <ClInclude Include="DirectX\Include\XInput.h" />
     <ClInclude Include="DirectX\Include\xma2defs.h" />
     <ClInclude Include="DirectX\Include\xnamath.h" />
+    <ClInclude Include="PlumCat.h" />
     <ClInclude Include="PlumCipherA.h" />
     <ClInclude Include="PlumCommon.h" />
     <ClInclude Include="PlumConsole.h" />
@@ -265,6 +266,7 @@
     <ClCompile Include="DirectSurface.cpp" />
     <ClCompile Include="DirectTexture.cpp" />
     <ClCompile Include="DirectThreadSafe.cpp" />
+    <ClCompile Include="PlumCat.cpp" />
     <ClCompile Include="PlumCipherA.cpp" />
     <ClCompile Include="PlumConsole.cpp" />
     <ClCompile Include="PlumCrypt.cpp" />

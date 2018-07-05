@@ -6,10 +6,11 @@
 * @file		PlumPack.cpp
 * @brief	This Program is PlumPack DLL Project.
 * @author	Alopex/Helium
-* @version	v1.01a
+* @version	v1.03a
 * @date		2017-12-16	v1.00a	alopex	Create Project.
 * @date		2017-12-23	v1.01a	alopex	Add Function UnPack to Memory.
-* @date		2018-1-16	v1.02a	alopex	Add For PackerMaker Function.
+* @date		2018-01-16	v1.02a	alopex	Add For PackerMaker Function.
+* @date		2018-07-05	v1.03a	alopex	Add Function Crypt Cat Function.
 */
 #include "PlumPack.h"
 
@@ -562,6 +563,274 @@ void CPlumPack::PlumUnPackFileA(const char* pSrc)
 
 		delete[] pDestFileName;
 		delete[] pArray;
+	}
+
+
+	delete[] pFileAddress;
+
+	CloseHandle(hFileSrc);
+}
+
+//----------------------------------------------------------------------------------
+// @Function:	 PlumPackFile(const char* pSrc)
+// @Purpose: CPlumPack打包函数
+// @Since: v1.00a
+// @Para: const void * pArray		//打包源数组地址
+// @Para: int nSize					//打包源数组长度
+// @Para: const char * pDest		//打包目标文件名
+// @Para: DWORD * pLuckyArr			//加密文件数组
+// @Return: None
+//----------------------------------------------------------------------------------
+void CPlumPack::PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, const char * pDest, DWORD * pLuckyArr)
+{
+	HANDLE hFileSrc;
+	HANDLE hFileDest;
+	HANDLE hFileMsg;
+
+	//打开目标文件
+	hFileDest = CreateFileA(pDest, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if (hFileDest == INVALID_HANDLE_VALUE)
+	{
+		CloseHandle(hFileDest);
+		return;
+	}
+
+	//分析目标文件信息
+	char* pTemp;
+	char* pDestName;
+	int nCount;
+
+	pTemp = strrchr((char*)pDest, '\\');
+	if (pTemp != NULL)//查找成功
+	{
+		nCount = strlen(++pTemp);
+		pDestName = (char*)malloc((nCount + 1) * sizeof(char));
+		memset(pDestName, 0, (nCount + 1));
+		strcpy_s(pDestName, (nCount + 1), pTemp);
+	}
+	else//查找失败
+	{
+		nCount = strlen(pDest);
+		pDestName = (char*)malloc((nCount + 1) * sizeof(char));
+		memset(pDestName, 0, (nCount + 1));
+		strcpy_s(pDestName, (nCount + 1), pTemp);
+	}
+
+	//写入打包文件信息
+	int i = 0;
+	PlumPackInfo sPackMsg;
+	DWORD dwRealWritePackMsg;
+
+	memset(&sPackMsg, 0, sizeof(sPackMsg));
+	for (i = 0, pTemp = pDestName; i < sizeof(sPackMsg.cFileName) && *pTemp != '\0'; ++i, ++pTemp)
+	{
+		*(sPackMsg.cFileName + i) = *pTemp;
+	}
+	memcpy(&(sPackMsg.cCodeAuthor), "alopex", sizeof("alopex"));
+	sPackMsg.dwFileAllNum = 1;
+	//sPackMsg.dwFileAllSize = 0;
+	WriteFile(hFileDest, &sPackMsg, sizeof(sPackMsg), &dwRealWritePackMsg, NULL);
+
+	if (pDestName) free(pDestName);
+
+	//预留相应字节数地址
+	DWORD* pFileAddressArr = NULL;
+
+	pFileAddressArr = new DWORD;
+	memset(pFileAddressArr, 0, sizeof(DWORD));
+	WriteFile(hFileDest, pFileAddressArr, sizeof(DWORD), &dwRealWritePackMsg, NULL);
+
+	//读取当前文件指针位置
+	*pFileAddressArr = SetFilePointer(hFileDest, NULL, NULL, FILE_CURRENT);
+
+	//加密文件
+	CPlumCrypt* pCrypt = new CPlumCrypt;
+
+	char* pTempSrc;
+	char* pDat;
+	int nLen;
+
+	pTempSrc = (char*)pDest;
+	nLen = strlen(pTempSrc);
+	pDat = (char*)malloc((nLen + 1) * sizeof(char));
+	strcpy_s(pDat, (nLen + 1), pTempSrc);
+	pTempSrc = strrchr(pDat, '.');
+	*pTempSrc = '.';
+	*(pTempSrc + 1) = 'd';
+	*(pTempSrc + 2) = 'a';
+	*(pTempSrc + 3) = 't';
+	*(pTempSrc + 4) = '\0';
+
+	pCrypt->PlumEnCryptFileExtractFromMemoryExA((const char*)pDat, pArray, nSize, pLuckyArr);
+
+	delete pCrypt;
+
+	//打开源文件
+	hFileSrc = CreateFileA(pDat, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if (hFileSrc == INVALID_HANDLE_VALUE)
+	{
+		CloseHandle(hFileSrc);
+		CloseHandle(hFileDest);
+		return;
+	}
+
+	//分析文件
+	char* pMsg;
+
+	pTemp = (char*)pDest;
+	nCount = strlen(pTemp);
+	pMsg = (char*)malloc((nCount + 1) * sizeof(char));
+	strcpy_s(pMsg, (nCount + 1), pTemp);
+	pTemp = strrchr(pMsg, '.');
+	*pTemp = '.';
+	*(pTemp + 1) = 'm';
+	*(pTemp + 2) = 's';
+	*(pTemp + 3) = 'g';
+	*(pTemp + 4) = '\0';
+
+	//打开文件信息
+	hFileMsg = CreateFileA(pMsg, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if (hFileMsg == INVALID_HANDLE_VALUE)
+	{
+		if (pDat) free(pDat);
+		if (pMsg) free(pMsg);
+		CloseHandle(hFileMsg);
+		CloseHandle(hFileSrc);
+		CloseHandle(hFileDest);
+		return;
+	}
+
+	//写入Msg
+	PlumFileInfo sMsg;
+	DWORD dwMsgRead;
+	DWORD dwMsgWrite;
+
+	ReadFile(hFileMsg, &sMsg, sizeof(sMsg), &dwMsgRead, NULL);
+	WriteFile(hFileDest, &sMsg, sizeof(sMsg), &dwMsgWrite, NULL);
+
+	//写入文件
+	unsigned char* pSrcArr = NULL;
+	unsigned char* pDestArr = NULL;
+	int nSrcSize = CRYPTARRAYSIZE;
+	int nDestSize = CRYPTARRAYSIZE;
+	DWORD dwRealRead = 0;
+	DWORD dwRealWrite = 0;
+
+	pSrcArr = (unsigned char*)malloc(nSrcSize * sizeof(unsigned char));
+	pDestArr = (unsigned char*)malloc(nDestSize * sizeof(unsigned char));
+
+	for (;;)
+	{
+		memset(pSrcArr, 0, nSrcSize);
+		memset(pDestArr, 0, nDestSize);
+
+		ReadFile(hFileSrc, pSrcArr, nSrcSize, &dwRealRead, NULL);
+		if (dwRealRead == 0) break;
+
+		memcpy(pDestArr, pSrcArr, dwRealRead);
+
+		WriteFile(hFileDest, pDestArr, dwRealRead, &dwRealWrite, NULL);
+		if (dwRealWrite == 0) break;
+	}
+
+
+	if (pSrcArr) free(pSrcArr);
+	if (pDestArr) free(pDestArr);
+
+	CloseHandle(hFileMsg);
+	hFileMsg = NULL;
+	CloseHandle(hFileSrc);
+	hFileSrc = NULL;
+
+	DeleteFileA(pDat);
+	DeleteFileA(pMsg);
+
+	if (pDat) free(pDat);
+	if (pMsg) free(pMsg);
+
+	//重新写入文件地址信息
+	SetFilePointer(hFileDest, sizeof(sPackMsg), NULL, FILE_BEGIN);
+	WriteFile(hFileDest, pFileAddressArr, sizeof(DWORD), &dwRealWritePackMsg, NULL);
+
+	delete pFileAddressArr;
+
+	CloseHandle(hFileDest);
+	hFileDest = NULL;
+}
+
+//----------------------------------------------------------------------------------
+// @Function:	 PlumUnPackFile(const char* pSrc)
+// @Purpose: CPlumPack打包函数
+// @Since: v1.00a
+// @Para: const char * pSrc			//解包文件名称
+// @Para: const void * pArray		//解包数组地址
+// @Para: int nSize					//解包数组长度
+// @Return: None
+//----------------------------------------------------------------------------------
+void CPlumPack::PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pValArr, DWORD dwValSize)
+{
+	HANDLE hFileSrc;
+
+	//打开源文件
+	hFileSrc = CreateFileA(pSrc, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if (hFileSrc == INVALID_HANDLE_VALUE)
+	{
+		CloseHandle(hFileSrc);
+		return;
+	}
+
+	//分析封包信息
+	PlumPackInfo sPackMsg;
+	int	nFileAllNum;
+	DWORD dwRealReadPackMsg;
+
+	ReadFile(hFileSrc, &sPackMsg, sizeof(sPackMsg), &dwRealReadPackMsg, NULL);
+	if (dwRealReadPackMsg == 0) return;
+
+	nFileAllNum = sPackMsg.dwFileAllNum;//封包文件总数
+	if (nFileAllNum == 0) return;
+
+	//存储各个文件偏移地址
+	DWORD* pFileAddress = NULL;
+	DWORD dwFileReadSize = 0;
+
+	pFileAddress = new DWORD[nFileAllNum];
+	for (int i = 0; i < nFileAllNum; ++i)
+	{
+		ReadFile(hFileSrc, (pFileAddress + i), sizeof(DWORD), &dwRealReadPackMsg, NULL);
+	}
+
+	//循环读取
+	for (int i = 0; i < nFileAllNum; ++i)
+	{
+		//设置解包文件地址
+		SetFilePointer(hFileSrc, *(pFileAddress + i), NULL, FILE_BEGIN);
+
+		//分析文件信息
+		PlumFileInfo sMsg;
+		char* pArray = NULL;
+		ReadFile(hFileSrc, &sMsg, sizeof(sMsg), &dwRealReadPackMsg, NULL);
+		dwFileReadSize = sMsg.dwCryptFileSize;
+
+		pArray = new char[dwFileReadSize];
+		ReadFile(hFileSrc, pArray, dwFileReadSize, &dwRealReadPackMsg, NULL);
+
+		//解包文件
+		CPlumCrypt* pCrypt = new CPlumCrypt;
+		char* pTemp = NULL;
+		DWORD dwSize = 0;
+
+		pCrypt->PlumDeCryptFileInMemoryStoreInMemoryExA((const void*)pArray, sMsg);
+		pCrypt->PlumGetArray(&pTemp, &dwSize);
+
+		memcpy_s((LPVOID)pValArr, dwValSize, pTemp, dwSize);
+
+		delete[] pArray;
+		delete pCrypt;
 	}
 
 
