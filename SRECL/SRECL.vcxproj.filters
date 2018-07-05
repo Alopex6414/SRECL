@@ -31,6 +31,18 @@
     <Filter Include="DirectX\Lib">
       <UniqueIdentifier>{74168b77-0c58-4f4c-bfaf-b70a267da10e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SFIL\Inc">
+      <UniqueIdentifier>{dae5fc3c-bdd4-4b83-a973-d4616c9e70d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFIL\Src">
+      <UniqueIdentifier>{846f589b-9052-4645-a86b-1e3b805cf12e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRCL\Inc">
+      <UniqueIdentifier>{6fe87382-fba9-4894-8d1b-ae60e44a1301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRCL\Src">
+      <UniqueIdentifier>{672da69d-4084-4d29-89b6-a274d2722de3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX\Include\xnamath.h">
@@ -255,92 +267,92 @@
     <ClInclude Include="DirectX\Include\audiodefs.h">
       <Filter>DirectX\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="DirectCommon.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectGraphics.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectThreadSafe.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DirectGraphics2D.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectGraphics3D.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectFont.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectInput.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectSound.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectShow.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectSafe.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectSprite.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectSurface.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectTexture.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumConsole.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
     <ClInclude Include="PlumCipherA.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumCrypt.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumPack.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumFile.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumGraphics.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumIni.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumLog.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumPath.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumProcess.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="PlumThread.h">
-      <Filter>SFIL</Filter>
-    </ClInclude>
-    <ClInclude Include="Cerasusfps.h">
-      <Filter>SRCL</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectMesh.h">
-      <Filter>SRCL</Filter>
+      <Filter>SFIL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="PlumCommon.h">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumConsole.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumCrypt.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumFile.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumGraphics.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumIni.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumLog.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPack.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPath.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumProcess.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumThread.h">
+      <Filter>SFIL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Cerasusfps.h">
+      <Filter>SRCL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="CerasusUnit.h">
-      <Filter>SRCL</Filter>
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectCommon.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectFont.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics2D.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics3D.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectMesh.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSafe.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectShow.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSound.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSprite.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSurface.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectTexture.h">
+      <Filter>SRCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectThreadSafe.h">
+      <Filter>SRCL\Inc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -367,83 +379,83 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DirectGraphics.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectThreadSafe.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectGraphics2D.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectGraphics3D.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectFont.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectInput.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectSound.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectShow.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectSafe.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectSprite.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectSurface.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectTexture.cpp">
-      <Filter>SRCL</Filter>
+    <ClCompile Include="PlumCipherA.cpp">
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumConsole.cpp">
-      <Filter>SFIL</Filter>
-    </ClCompile>
-    <ClCompile Include="PlumCipherA.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumCrypt.cpp">
-      <Filter>SFIL</Filter>
-    </ClCompile>
-    <ClCompile Include="PlumPack.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumFile.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumGraphics.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumIni.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumLog.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="PlumPack.cpp">
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumPath.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumProcess.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="PlumThread.cpp">
-      <Filter>SFIL</Filter>
+      <Filter>SFIL\Src</Filter>
     </ClCompile>
     <ClCompile Include="Cerasusfps.cpp">
-      <Filter>SRCL</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectMesh.cpp">
-      <Filter>SRCL</Filter>
+      <Filter>SRCL\Src</Filter>
     </ClCompile>
     <ClCompile Include="CerasusUnit.cpp">
-      <Filter>SRCL</Filter>
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectFont.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics2D.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics3D.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectInput.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectMesh.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSafe.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectShow.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSound.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSprite.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSurface.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectTexture.cpp">
+      <Filter>SRCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectThreadSafe.cpp">
+      <Filter>SRCL\Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
