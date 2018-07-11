@@ -16,11 +16,8 @@
 #ifndef __PLUMCRYPT_H_
 #define __PLUMCRYPT_H_
 
-//Include Windows Header File
-#include <Windows.h>
-
-//Include C/C++ Run Header File
-#include <stdio.h>
+//Include Plum Common Header File
+#include "PlumCommon.h"
 
 //Include Crypt Header File
 #include "PlumCipherA.h"
@@ -60,22 +57,22 @@ public:
 	virtual ~CPlumCrypt();
 
 	//访问
-	virtual void PlumGetArray(char** ppArr, DWORD* pArrSize) const;
+	virtual void PLUMCRYPT_CALLMODE PlumGetArray(char** ppArr, DWORD* pArrSize) const;
 
 	//AES Crypt(AES加密)
 	//File(文件)
-	virtual void PlumEnCryptFileA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
-	virtual void PlumDeCryptFileA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
-	virtual void PlumEnCryptFileExA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
-	virtual void PlumDeCryptFileExA(const char* pSrc, const char* pDest);
-	virtual void PlumDeCryptFileNoExA(const char* pSrc, const char* pDest);
+	virtual void PLUMCRYPT_CALLMODE PlumEnCryptFileA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
+	virtual void PLUMCRYPT_CALLMODE PlumEnCryptFileExA(const char* pSrc, const char* pDest, DWORD* pLuckyArr);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileExA(const char* pSrc, const char* pDest);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileNoExA(const char* pSrc, const char* pDest);
 	//Memory(内存)
-	virtual void PlumEnCryptFileExtractFromMemoryExA(const char* pDest, DWORD* pLuckyArr);
-	virtual void PlumEnCryptFileExtractFromMemoryExA(const char* pDest, const void* pArray, int nSize, DWORD* pLuckyArr);
-	virtual void PlumDeCryptFileStoreInMemoryExA(const char* pSrc);
-	virtual void PlumDeCryptFileStoreInMemoryExA(const char* pSrc, const void* pArray, int nSize);
-	virtual void PlumDeCryptFileInMemoryStoreInFileExA(const void* pArray, PlumFileInfo sSrcArrayInfo, const char* pDest);
-	virtual void PlumDeCryptFileInMemoryStoreInMemoryExA(const void* pArray, PlumFileInfo sSrcArrayInfo);
+	virtual void PLUMCRYPT_CALLMODE PlumEnCryptFileExtractFromMemoryExA(const char* pDest, DWORD* pLuckyArr);
+	virtual void PLUMCRYPT_CALLMODE PlumEnCryptFileExtractFromMemoryExA(const char* pDest, const void* pArray, int nSize, DWORD* pLuckyArr);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileStoreInMemoryExA(const char* pSrc);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileStoreInMemoryExA(const char* pSrc, const void* pArray, int nSize);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileInMemoryStoreInFileExA(const void* pArray, PlumFileInfo sSrcArrayInfo, const char* pDest);
+	virtual void PLUMCRYPT_CALLMODE PlumDeCryptFileInMemoryStoreInMemoryExA(const void* pArray, PlumFileInfo sSrcArrayInfo);
 };
 
 #endif

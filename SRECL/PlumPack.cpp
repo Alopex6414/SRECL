@@ -49,7 +49,7 @@ CPlumPack::~CPlumPack()
 // @Para: int* pArrSize
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumGetArray(CPlumCrypt** ppCryptArr, int* pArrSize) const
+void PLUMPACK_CALLMODE CPlumPack::PlumGetArray(CPlumCrypt** ppCryptArr, int* pArrSize) const
 {
 	*ppCryptArr = m_pCryptArr;
 	*pArrSize = m_nArrSize;
@@ -64,7 +64,7 @@ void CPlumPack::PlumGetArray(CPlumCrypt** ppCryptArr, int* pArrSize) const
 // @Para: const char* pDest				//打包目标文件名
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest)
+void PLUMPACK_CALLMODE CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest)
 {
 	HANDLE hFileSrc;
 	HANDLE hFileDest;
@@ -230,7 +230,7 @@ void CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* p
 // @Para: const char* pDest				//打包目标文件名
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr)
+void PLUMPACK_CALLMODE CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr)
 {
 	HANDLE hFileSrc;
 	HANDLE hFileDest;
@@ -424,7 +424,7 @@ void CPlumPack::PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* p
 // @Para: char* pDest					//解包目标文件路径(不是文件名称!)
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumUnPackFileA(const char* pSrc, const char* pDest)
+void PLUMPACK_CALLMODE CPlumPack::PlumUnPackFileA(const char* pSrc, const char* pDest)
 {
 	HANDLE hFileSrc;
 
@@ -505,7 +505,7 @@ void CPlumPack::PlumUnPackFileA(const char* pSrc, const char* pDest)
 // @Para: const char* pSrc				//解包源文件名
 // @Return: None
 //----------------------------------------------------------------------------------
-void CPlumPack::PlumUnPackFileA(const char* pSrc)
+void PLUMPACK_CALLMODE CPlumPack::PlumUnPackFileA(const char* pSrc)
 {
 	HANDLE hFileSrc;
 
@@ -581,7 +581,7 @@ void CPlumPack::PlumUnPackFileA(const char* pSrc)
 // @Para: DWORD * pLuckyArr			//加密文件数组
 // @Return: None
 //----------------------------------------------------------------------------------
-void CPlumPack::PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, const char * pDest, DWORD * pLuckyArr)
+void PLUMPACK_CALLMODE CPlumPack::PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, const char * pDest, DWORD * pLuckyArr)
 {
 	HANDLE hFileSrc;
 	HANDLE hFileDest;
@@ -770,7 +770,7 @@ void CPlumPack::PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, c
 // @Para: int nSize					//解包数组长度
 // @Return: None
 //----------------------------------------------------------------------------------
-void CPlumPack::PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pValArr, DWORD dwValSize)
+void PLUMPACK_CALLMODE CPlumPack::PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pValArr, DWORD dwValSize)
 {
 	HANDLE hFileSrc;
 
@@ -848,7 +848,7 @@ void CPlumPack::PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pVa
 // @Para: const char* pDest				//打包目标文件名
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, int* pCount)
+void PLUMPACK_CALLMODE CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, int* pCount)
 {
 	HANDLE hFileSrc;
 	HANDLE hFileDest;
@@ -1016,7 +1016,7 @@ void CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const c
 // @Para: const char* pDest				//打包目标文件名
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr, int* pCount)
+void PLUMPACK_CALLMODE CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr, int* pCount)
 {
 	HANDLE hFileSrc;
 	HANDLE hFileDest;
@@ -1212,7 +1212,7 @@ void CPlumPack::PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const c
 // @Para: char* pDest					//解包目标文件路径(不是文件名称!)
 // @Return: None
 //-----------------------------------------------------------------------------
-void CPlumPack::PlumUnPackFilePackerA(const char* pSrc, const char* pDest, int* pSize, int* pCount)
+void PLUMPACK_CALLMODE CPlumPack::PlumUnPackFilePackerA(const char* pSrc, const char* pDest, int* pSize, int* pCount)
 {
 	HANDLE hFileSrc;
 

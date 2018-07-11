@@ -14,8 +14,8 @@
 #ifndef __PLUMCIPHERA_H_
 #define __PLUMCIPHERA_H_
 
-//Include Windows Header File
-#include <Windows.h>
+//Include Plum Common Header File
+#include "PlumCommon.h"
 
 //Macro Definition
 #ifdef	SRECL_EXPORTS
@@ -23,6 +23,8 @@
 #else
 #define PLUMCRYPT_API	__declspec(dllimport)
 #endif
+
+#define PLUMCRYPT_CALLMODE	__stdcall
 
 //Class Definition
 class PLUMCRYPT_API CPlumCipherA
@@ -38,22 +40,22 @@ public:
 
 	CPlumCipherA(unsigned char* Key);									//构造
 
-	void KeyExMatrix(unsigned char* Key, unsigned char Ex[][4][4]);
-	unsigned char FFMul(unsigned char Var1, unsigned char Var2);
+	void PLUMCRYPT_CALLMODE KeyExMatrix(unsigned char* Key, unsigned char Ex[][4][4]);
+	unsigned char PLUMCRYPT_CALLMODE FFMul(unsigned char Var1, unsigned char Var2);
 
-	void SubBytes(unsigned char* pState);
-	void ShiftRows(unsigned char State[][4]);
-	void MixColumns(unsigned char State[][4]);
-	void AddRoundKey(unsigned char* pState, unsigned char* pK);
+	void PLUMCRYPT_CALLMODE SubBytes(unsigned char* pState);
+	void PLUMCRYPT_CALLMODE ShiftRows(unsigned char State[][4]);
+	void PLUMCRYPT_CALLMODE MixColumns(unsigned char State[][4]);
+	void PLUMCRYPT_CALLMODE AddRoundKey(unsigned char* pState, unsigned char* pK);
 	
-	void InvSubBytes(unsigned char* pState);
-	void InvShiftRows(unsigned char State[][4]);
-	void InvMixColumns(unsigned char State[][4]);
+	void PLUMCRYPT_CALLMODE InvSubBytes(unsigned char* pState);
+	void PLUMCRYPT_CALLMODE InvShiftRows(unsigned char State[][4]);
+	void PLUMCRYPT_CALLMODE InvMixColumns(unsigned char State[][4]);
 	
-	void EnCipher(const unsigned char* pSrc, unsigned char* pDest);		//加密数组Array[4][4]	
-	void DeCipher(const unsigned char* pSrc, unsigned char* pDest);		//解密数组Array[4][4]
-	void EnCrypt(const void* pSrc, void* pDest, int nLen);				//加密数组
-	void DeCrypt(const void* pSrc, void* pDest, int nLen);				//解密数组
+	void PLUMCRYPT_CALLMODE EnCipher(const unsigned char* pSrc, unsigned char* pDest);		//加密数组Array[4][4]	
+	void PLUMCRYPT_CALLMODE DeCipher(const unsigned char* pSrc, unsigned char* pDest);		//解密数组Array[4][4]
+	void PLUMCRYPT_CALLMODE EnCrypt(const void* pSrc, void* pDest, int nLen);				//加密数组
+	void PLUMCRYPT_CALLMODE DeCrypt(const void* pSrc, void* pDest, int nLen);				//解密数组
 };
 
 #endif

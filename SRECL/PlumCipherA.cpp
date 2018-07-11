@@ -99,7 +99,7 @@ CPlumCipherA::CPlumCipherA(unsigned char* Key)
 // @Para: unsigned char  Ex[][4][4](扩展数组)
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::KeyExMatrix(unsigned char* Key, unsigned char Ex[][4][4])
+void PLUMCRYPT_CALLMODE CPlumCipherA::KeyExMatrix(unsigned char* Key, unsigned char Ex[][4][4])
 {
 	unsigned char Shift[] = { 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36 };
 	unsigned char* pSrc;
@@ -146,7 +146,7 @@ void CPlumCipherA::KeyExMatrix(unsigned char* Key, unsigned char Ex[][4][4])
 // @Para: unsigned char Var2
 // @Return: None
 //------------------------------------------------------------------------
-unsigned char CPlumCipherA::FFMul(unsigned char Var1, unsigned char Var2)
+unsigned char PLUMCRYPT_CALLMODE CPlumCipherA::FFMul(unsigned char Var1, unsigned char Var2)
 {
 	unsigned char Arr[4];
 	unsigned char Res = 0;
@@ -178,7 +178,7 @@ unsigned char CPlumCipherA::FFMul(unsigned char Var1, unsigned char Var2)
 // @Para: unsigned char* pState
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::SubBytes(unsigned char* pState)
+void PLUMCRYPT_CALLMODE CPlumCipherA::SubBytes(unsigned char* pState)
 {
 	unsigned char* pSBox;
 	unsigned char* pTemp;
@@ -196,7 +196,7 @@ void CPlumCipherA::SubBytes(unsigned char* pState)
 // @Para: unsigned char State[][4]
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::ShiftRows(unsigned char State[][4])
+void PLUMCRYPT_CALLMODE CPlumCipherA::ShiftRows(unsigned char State[][4])
 {
 	unsigned char T[4];
 
@@ -220,7 +220,7 @@ void CPlumCipherA::ShiftRows(unsigned char State[][4])
 // @Para: unsigned char State[][4]
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::MixColumns(unsigned char State[][4])
+void PLUMCRYPT_CALLMODE CPlumCipherA::MixColumns(unsigned char State[][4])
 {
 	unsigned char T[4];
 
@@ -248,7 +248,7 @@ void CPlumCipherA::MixColumns(unsigned char State[][4])
 // @Para: unsigned char* pK
 // @Return: None
 //--------------------------------------------------------------------------
-void CPlumCipherA::AddRoundKey(unsigned char* pState, unsigned char* pK)
+void PLUMCRYPT_CALLMODE CPlumCipherA::AddRoundKey(unsigned char* pState, unsigned char* pK)
 {
 	unsigned char* pTemp;
 	unsigned char* pKey;
@@ -266,7 +266,7 @@ void CPlumCipherA::AddRoundKey(unsigned char* pState, unsigned char* pK)
 // @Para: unsigned char* pState
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::InvSubBytes(unsigned char* pState)
+void PLUMCRYPT_CALLMODE CPlumCipherA::InvSubBytes(unsigned char* pState)
 {
 	unsigned char* pInvSBox;
 	unsigned char* pTemp;
@@ -284,7 +284,7 @@ void CPlumCipherA::InvSubBytes(unsigned char* pState)
 // @Para: unsigned char State[][4]
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::InvShiftRows(unsigned char State[][4])
+void PLUMCRYPT_CALLMODE CPlumCipherA::InvShiftRows(unsigned char State[][4])
 {
 	unsigned char T[4];
 
@@ -308,7 +308,7 @@ void CPlumCipherA::InvShiftRows(unsigned char State[][4])
 // @Para: unsigned char State[][4]
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::InvMixColumns(unsigned char State[][4])
+void PLUMCRYPT_CALLMODE CPlumCipherA::InvMixColumns(unsigned char State[][4])
 {
 	unsigned char T[4];
 
@@ -336,7 +336,7 @@ void CPlumCipherA::InvMixColumns(unsigned char State[][4])
 // @Para: void* pDest		//目标数组
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::EnCipher(const unsigned char* pSrc, unsigned char* pDest)
+void PLUMCRYPT_CALLMODE CPlumCipherA::EnCipher(const unsigned char* pSrc, unsigned char* pDest)
 {
 	unsigned char State[4][4];
 
@@ -385,7 +385,7 @@ void CPlumCipherA::EnCipher(const unsigned char* pSrc, unsigned char* pDest)
 // @Para: void* pDest		//目标数组
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::DeCipher(const unsigned char* pSrc, unsigned char* pDest)
+void PLUMCRYPT_CALLMODE CPlumCipherA::DeCipher(const unsigned char* pSrc, unsigned char* pDest)
 {
 	unsigned char State[4][4];
 
@@ -435,7 +435,7 @@ void CPlumCipherA::DeCipher(const unsigned char* pSrc, unsigned char* pDest)
 // @Para: int nLen			//数组长度
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::EnCrypt(const void* pSrc, void* pDest, int nLen)
+void PLUMCRYPT_CALLMODE CPlumCipherA::EnCrypt(const void* pSrc, void* pDest, int nLen)
 {
 	unsigned char* pIn = (unsigned char*)pSrc;
 	unsigned char* pOu = (unsigned char*)pDest;
@@ -455,7 +455,7 @@ void CPlumCipherA::EnCrypt(const void* pSrc, void* pDest, int nLen)
 // @Para: int nLen			//数组长度
 // @Return: None
 //------------------------------------------------------------------------
-void CPlumCipherA::DeCrypt(const void* pSrc, void* pDest, int nLen)
+void PLUMCRYPT_CALLMODE CPlumCipherA::DeCrypt(const void* pSrc, void* pDest, int nLen)
 {
 	unsigned char* pIn = (unsigned char*)pSrc;
 	unsigned char* pOu = (unsigned char*)pDest;

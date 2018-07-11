@@ -7,9 +7,10 @@
 * @brief	This Program is PlumCommon Plum Common Header File.
 * @notes	Plum Common Header File
 * @author	alopex
-* @version	v1.01a
+* @version	v1.02a
 * @date		2018-07-02	v1.00a	alopex	Create Project.
 * @date		2018-07-03	v1.01a	alopex	Add Shlwapi Library.
+* @date		2018-07-11	v1.02a	alopex	Add Atlconv Header.
 */
 #pragma once
 
@@ -42,6 +43,9 @@
 #include <array>
 #include <queue>
 #include <map>
+
+//Include ATL Header File
+#include <atlconv.h>
 
 //Include C/C++ Library
 #pragma comment(lib, "Shlwapi.lib")

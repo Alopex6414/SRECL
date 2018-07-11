@@ -17,11 +17,8 @@
 #ifndef __PLUMPACK_H_
 #define __PLUMPACK_H_
 
-//Include Windows Header File
-#include <Windows.h>
-
-//Include C/C++ Run Header File
-#include <stdio.h>
+//Include Plum Common Header File
+#include "PlumCommon.h"
 
 //Include Crypt File
 #include "PlumCipherA.h"
@@ -33,6 +30,8 @@
 #else
 #define PLUMPACK_API	__declspec(dllimport)
 #endif
+
+#define PLUMPACK_CALLMODE	__stdcall
 
 //Struct Definition
 typedef struct
@@ -56,21 +55,21 @@ public:
 	virtual ~CPlumPack();
 
 	//访问
-	virtual void PlumGetArray(CPlumCrypt** ppCryptArr, int* pArrSize) const;
+	virtual void PLUMPACK_CALLMODE PlumGetArray(CPlumCrypt** ppCryptArr, int* pArrSize) const;
 
 	//AES Pack(AES封包/解包)
-	virtual void PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest);
-	virtual void PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr);
-	virtual void PlumUnPackFileA(const char* pSrc, const char* pDest);
-	virtual void PlumUnPackFileA(const char* pSrc);
+	virtual void PLUMPACK_CALLMODE PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest);
+	virtual void PLUMPACK_CALLMODE PlumPackFileA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr);
+	virtual void PLUMPACK_CALLMODE PlumUnPackFileA(const char* pSrc, const char* pDest);
+	virtual void PLUMPACK_CALLMODE PlumUnPackFileA(const char* pSrc);
 
-	virtual void PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, const char * pDest, DWORD * pLuckyArr);
-	virtual void PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pValArr, DWORD dwValSize);
+	virtual void PLUMPACK_CALLMODE PlumPackFileExtractFromMemoryA(const void * pArray, int nSize, const char * pDest, DWORD * pLuckyArr);
+	virtual void PLUMPACK_CALLMODE PlumUnPackFileStoreInMemoryA(const char * pSrc, const void * pValArr, DWORD dwValSize);
 
 	//AES Packer(PackerMaker)
-	virtual void PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, int* pCount);
-	virtual void PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr, int* pCount);
-	virtual void PlumUnPackFilePackerA(const char* pSrc, const char* pDest, int* pSize, int* pCount);
+	virtual void PLUMPACK_CALLMODE PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, int* pCount);
+	virtual void PLUMPACK_CALLMODE PlumPackFilePackerA(const char* pSrcArr[], int nArrSize, const char* pDest, DWORD* pLuckyArr, int* pCount);
+	virtual void PLUMPACK_CALLMODE PlumUnPackFilePackerA(const char* pSrc, const char* pDest, int* pSize, int* pCount);
 };
 
 #endif
