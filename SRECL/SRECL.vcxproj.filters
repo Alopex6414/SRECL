@@ -52,6 +52,15 @@
     <Filter Include="SCCL\Src">
       <UniqueIdentifier>{d4fbe3cd-60be-44c8-b851-dbece39a8ecd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SSCL">
+      <UniqueIdentifier>{db495997-8dea-4678-b64e-5136bd3a05a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSCL\Inc">
+      <UniqueIdentifier>{77bb94de-e556-4dfa-a39e-cc0fea3e6c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSCL\Src">
+      <UniqueIdentifier>{4a63ad36-b3a7-4ba2-a7bc-1619edd7992b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX\Include\xnamath.h">
@@ -378,6 +387,15 @@
     <ClInclude Include="CThreadSafeEx.h">
       <Filter>SCCL\Inc</Filter>
     </ClInclude>
+    <ClInclude Include="ConvallariaLua.h">
+      <Filter>SSCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvallariaLuaMsg.h">
+      <Filter>SSCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvallariaLuaType.h">
+      <Filter>SSCL\Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -495,6 +513,9 @@
     </ClCompile>
     <ClCompile Include="CThreadSafeEx.cpp">
       <Filter>SCCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvallariaLua.cpp">
+      <Filter>SSCL\Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

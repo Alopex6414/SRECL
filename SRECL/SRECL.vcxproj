@@ -74,12 +74,12 @@
     <LibraryPath>$(ProjectDir)DirectX\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)DirectX\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)DirectX\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)DirectX\Include;$(SolutionDir)Lua\Inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)DirectX\Lib\x86;$(SolutionDir)Lua\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ProjectDir)DirectX\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)DirectX\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)DirectX\Include;$(SolutionDir)Lua\Inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)DirectX\Lib\x86;$(SolutionDir)Lua\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,6 +138,9 @@
   <ItemGroup>
     <ClInclude Include="Cerasusfps.h" />
     <ClInclude Include="CerasusUnit.h" />
+    <ClInclude Include="ConvallariaLua.h" />
+    <ClInclude Include="ConvallariaLuaMsg.h" />
+    <ClInclude Include="ConvallariaLuaType.h" />
     <ClInclude Include="CRosaSerial.h" />
     <ClInclude Include="CRosaSocket.h" />
     <ClInclude Include="CThreadSafe.h" />
@@ -257,6 +260,7 @@
   <ItemGroup>
     <ClCompile Include="Cerasusfps.cpp" />
     <ClCompile Include="CerasusUnit.cpp" />
+    <ClCompile Include="ConvallariaLua.cpp" />
     <ClCompile Include="CRosaSerial.cpp" />
     <ClCompile Include="CRosaSocket.cpp" />
     <ClCompile Include="CThreadSafe.cpp" />
