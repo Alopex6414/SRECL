@@ -43,6 +43,15 @@
     <Filter Include="SRCL\Src">
       <UniqueIdentifier>{672da69d-4084-4d29-89b6-a274d2722de3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SCCL">
+      <UniqueIdentifier>{18ed4ed3-8384-4ee8-8efe-0e5bc2967afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SCCL\Inc">
+      <UniqueIdentifier>{e49b7272-c32a-4004-b1aa-6e8b04b3bf4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SCCL\Src">
+      <UniqueIdentifier>{d4fbe3cd-60be-44c8-b851-dbece39a8ecd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX\Include\xnamath.h">
@@ -357,6 +366,18 @@
     <ClInclude Include="PlumCat.h">
       <Filter>SFIL\Inc</Filter>
     </ClInclude>
+    <ClInclude Include="CRosaSerial.h">
+      <Filter>SCCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="CRosaSocket.h">
+      <Filter>SCCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="CThreadSafe.h">
+      <Filter>SCCL\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="CThreadSafeEx.h">
+      <Filter>SCCL\Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\xnamathvector.inl">
@@ -462,6 +483,18 @@
     </ClCompile>
     <ClCompile Include="PlumCat.cpp">
       <Filter>SFIL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="CRosaSerial.cpp">
+      <Filter>SCCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="CRosaSocket.cpp">
+      <Filter>SCCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadSafe.cpp">
+      <Filter>SCCL\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadSafeEx.cpp">
+      <Filter>SCCL\Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
